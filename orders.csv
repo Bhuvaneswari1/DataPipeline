@@ -1,0 +1,12 @@
+order_id,customer,product,order_date,quantity
+O1001,Ravi,Laptop,2026-10-01,1
+O1002,Meena,Phone,2026-10-02,2
+O1003,Kiran,Laptop,2026-10-03,1
+O1004,,Tablet,2026-10-04,3
+O1005,Anita,Phone,2026-10-05,1
+O1006,Suresh,Tablet,2026-10-06,2
+O1007,Divya,Laptop,2026-10-07,1
+o1008 ,Arjun,Phone,2026-10-08,1
+O1009,Latha,Tablet,2026-10-09,1
+O1010,Vikram,Laptop,2026-10-10,1
+O1003,Kiran,Laptop,2026-10-03,1
