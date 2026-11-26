@@ -25,3 +25,63 @@
 2026-11-12 18:17:00,138 INFO    pipeline: Run 20261112-181700-068240 finished: SUCCESS in 0.07s
 2026-11-12 18:17:00,138 INFO    apscheduler.executors.default: Job "run_pipeline (trigger: interval[0:00:05], next run at: 2026-11-12 18:17:05 IST)" executed successfully
 2026-11-12 18:17:00,138 INFO    scheduler: Run 2 succeeded
+2026-11-26 12:19:01,344 INFO    pipeline: Run 20261126-121901-344512 started
+2026-11-26 12:19:01,506 INFO    pipeline: Cleaned 10 orders and 9 shipments
+2026-11-26 12:19:01,506 ERROR   pipeline: Run 20261126-121901-344512 failed
+Traceback (most recent call last):
+  File "/Users/bhuvaneswarigokul/Desktop/Gen-AI/Hexaware/Data_Pipeline/order-reconciliation/src/hour8_automation/pipeline_job.py", line 100, in run_pipeline
+    validate_inputs(orders, sla)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/bhuvaneswarigokul/Desktop/Gen-AI/Hexaware/Data_Pipeline/order-reconciliation/src/hour8_automation/pipeline_job.py", line 50, in validate_inputs
+    raise ValueError(f"No SLA rule for product(s): {missing}")
+ValueError: No SLA rule for product(s): ['Monitor']
+2026-11-26 12:19:01,517 INFO    pipeline: Run 20261126-121901-344512 finished: FAILED in 0.16s
+2026-11-26 12:20:53,742 INFO    pipeline: Run 20261126-122053-742255 started
+2026-11-26 12:20:53,840 INFO    pipeline: Cleaned 10 orders and 9 shipments
+2026-11-26 12:20:53,891 INFO    pipeline: Loaded 1 order rows and 9 shipment rows
+2026-11-26 12:20:53,904 INFO    pipeline: Reconciled: unshipped=2 orphan=1 overdue=4
+2026-11-26 12:20:53,993 INFO    pipeline: Run 20261126-122053-742255 finished: SUCCESS in 0.25s
+2026-11-26 12:22:56,758 INFO    apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-11-26 12:22:56,759 INFO    scheduler: Starting scheduler with trigger interval[0:00:10] in Asia/Kolkata
+2026-11-26 12:22:56,759 INFO    apscheduler.scheduler: Added job "run_pipeline" to job store "default"
+2026-11-26 12:22:56,759 INFO    apscheduler.scheduler: Scheduler started
+2026-11-26 12:23:06,763 INFO    apscheduler.executors.default: Running job "run_pipeline (trigger: interval[0:00:10], next run at: 2026-11-26 12:23:06 IST)" (scheduled at 2026-11-26 12:23:06.758888+05:30)
+2026-11-26 12:23:06,764 INFO    pipeline: Run 20261126-122306-764685 started
+2026-11-26 12:23:06,896 INFO    pipeline: Cleaned 10 orders and 9 shipments
+2026-11-26 12:23:06,926 INFO    pipeline: Loaded 1 order rows and 9 shipment rows
+2026-11-26 12:23:06,937 INFO    pipeline: Reconciled: unshipped=2 orphan=1 overdue=4
+2026-11-26 12:23:07,001 INFO    pipeline: Run 20261126-122306-764685 finished: SUCCESS in 0.23s
+2026-11-26 12:23:07,001 INFO    apscheduler.executors.default: Job "run_pipeline (trigger: interval[0:00:10], next run at: 2026-11-26 12:23:16 IST)" executed successfully
+2026-11-26 12:23:07,001 INFO    scheduler: Run 1 succeeded
+2026-11-26 12:23:16,764 INFO    apscheduler.executors.default: Running job "run_pipeline (trigger: interval[0:00:10], next run at: 2026-11-26 12:23:26 IST)" (scheduled at 2026-11-26 12:23:16.758888+05:30)
+2026-11-26 12:23:16,765 INFO    pipeline: Run 20261126-122316-765498 started
+2026-11-26 12:23:16,792 INFO    pipeline: Cleaned 10 orders and 9 shipments
+2026-11-26 12:23:16,806 INFO    pipeline: Loaded 1 order rows and 9 shipment rows
+2026-11-26 12:23:16,815 INFO    pipeline: Reconciled: unshipped=2 orphan=1 overdue=4
+2026-11-26 12:23:16,840 INFO    pipeline: Run 20261126-122316-765498 finished: SUCCESS in 0.07s
+2026-11-26 12:23:16,840 INFO    apscheduler.executors.default: Job "run_pipeline (trigger: interval[0:00:10], next run at: 2026-11-26 12:23:26 IST)" executed successfully
+2026-11-26 12:23:16,841 INFO    scheduler: Run 2 succeeded
+2026-11-26 12:23:16,841 INFO    scheduler: Reached 2 runs. Stopping the scheduler.
+2026-11-26 12:23:16,841 INFO    apscheduler.scheduler: Scheduler has been shut down
+2026-11-26 12:23:35,596 INFO    apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-11-26 12:23:35,596 INFO    scheduler: Starting scheduler with trigger interval[0:00:10] in Asia/Kolkata
+2026-11-26 12:23:35,596 INFO    apscheduler.scheduler: Added job "run_pipeline" to job store "default"
+2026-11-26 12:23:35,596 INFO    apscheduler.scheduler: Scheduler started
+2026-11-26 12:23:45,601 INFO    apscheduler.executors.default: Running job "run_pipeline (trigger: interval[0:00:10], next run at: 2026-11-26 12:23:55 IST)" (scheduled at 2026-11-26 12:23:45.596004+05:30)
+2026-11-26 12:23:45,602 INFO    pipeline: Run 20261126-122345-602675 started
+2026-11-26 12:23:45,716 INFO    pipeline: Cleaned 10 orders and 9 shipments
+2026-11-26 12:23:45,742 INFO    pipeline: Loaded 1 order rows and 9 shipment rows
+2026-11-26 12:23:45,754 INFO    pipeline: Reconciled: unshipped=2 orphan=1 overdue=4
+2026-11-26 12:23:45,815 INFO    pipeline: Run 20261126-122345-602675 finished: SUCCESS in 0.21s
+2026-11-26 12:23:45,815 INFO    apscheduler.executors.default: Job "run_pipeline (trigger: interval[0:00:10], next run at: 2026-11-26 12:23:55 IST)" executed successfully
+2026-11-26 12:23:45,815 INFO    scheduler: Run 1 succeeded
+2026-11-26 12:23:55,600 INFO    apscheduler.executors.default: Running job "run_pipeline (trigger: interval[0:00:10], next run at: 2026-11-26 12:24:05 IST)" (scheduled at 2026-11-26 12:23:55.596004+05:30)
+2026-11-26 12:23:55,600 INFO    pipeline: Run 20261126-122355-600845 started
+2026-11-26 12:23:55,635 INFO    pipeline: Cleaned 10 orders and 9 shipments
+2026-11-26 12:23:55,651 INFO    pipeline: Loaded 1 order rows and 9 shipment rows
+2026-11-26 12:23:55,659 INFO    pipeline: Reconciled: unshipped=2 orphan=1 overdue=4
+2026-11-26 12:23:55,683 INFO    pipeline: Run 20261126-122355-600845 finished: SUCCESS in 0.08s
+2026-11-26 12:23:55,683 INFO    apscheduler.executors.default: Job "run_pipeline (trigger: interval[0:00:10], next run at: 2026-11-26 12:24:05 IST)" executed successfully
+2026-11-26 12:23:55,683 INFO    scheduler: Run 2 succeeded
+2026-11-26 12:23:55,683 INFO    scheduler: Reached 2 runs. Stopping the scheduler.
+2026-11-26 12:23:55,683 INFO    apscheduler.scheduler: Scheduler has been shut down

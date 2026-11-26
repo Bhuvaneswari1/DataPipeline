@@ -30,3 +30,7 @@ print(greet_customer("Alice"))
 #Bridge to Hour4: the reconciliation of the orders and shipped lists
 unshipped_orders = [order_id for order_id in orders if order_id not in shipped]
 print(f"Unshipped orders: {unshipped_orders}")
+
+
+#order-date = 2026-10-06
+#delivery-date = 2026-10-20

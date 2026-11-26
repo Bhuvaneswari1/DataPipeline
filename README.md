@@ -186,16 +186,139 @@ Using the project's current sample data, shipment `S5008` has order ID `O9999`. 
 
 The exact row number and formatting may vary with pandas and with the CSV contents.
 
-## Setup and Run
+## Setup and run commands
 
-Run all commands from the project root:
+Run these commands from the extracted `order-reconciliation` folder, which contains `requirements.txt` and `src/`. Create a fresh virtual environment for your operating system.
+
+**macOS**
 
 ```bash
-cd /Users/bhuvaneswarigokul/Desktop/Gen-AI/Hexaware/Data_Pipeline/order-reconciliation
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-python3 src/hour4_reconciliation/orphan_shipments.py
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
 ```
 
-The virtual environment is optional, but it keeps this project's Python packages separate from global Python packages.
+**Windows PowerShell**
+
+```powershell
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+### Hour 1 — Python basics
+
+```bash
+python src/hour1_python_basics/basics.py
+```
+
+### Hour 2 — Read and explore orders with pandas
+
+```bash
+python src/hour2_pandas/read_orders.py
+python src/hour2_pandas/pandas_work.py
+```
+
+### Hour 3 — Clean orders and shipments
+
+```bash
+python src/hour3_data_cleaning/clean_orders.py
+python src/hour3_data_cleaning/clean_shipments.py
+python src/hour3_data_cleaning/strict_cleaning.py
+```
+
+### Hour 4 — Run each reconciliation check
+
+```bash
+python src/hour4_reconciliation/unshipped_orders.py
+python src/hour4_reconciliation/orphan_shipments.py
+python src/hour4_reconciliation/overdue_deliveries.py
+```
+
+### Hour 5 — Export Excel and dated CSV reports
+
+```bash
+python src/hour5_reporting/task_extended_reports.py
+```
+
+The console report and standard CSV export helpers are called by Hour 6.
+
+### Hour 6 — Run the complete CSV pipeline
+
+```bash
+python src/hour6_complete_pipeline/main.py
+```
+
+### Hour 7 — Load and reconcile the warehouse
+
+If `DATABASE_URL` in `.env` points to MySQL, start MySQL and create the configured database and user first. The user needs permission to create tables and select, insert, and delete rows in that database. The pipeline creates its tables. Without a configured database URL, the project uses local SQLite.
+
+```bash
+python src/hour7_loading/etl_load_pipeline.py
+```
+
+Run the full-load database demo or Parquet demo separately.
+
+```bash
+python src/hour7_loading/load_database.py
+python src/hour7_loading/load_parquet.py
+```
+
+### Hour 8 — Run once or schedule the job
+
+Before running Hour 8, make sure every product in the configured orders CSV has a matching row in `data/sla_rules.csv`. If your orders contain `Monitor`, add a `Monitor` rule with the applicable delivery deadline in days.
+
+**Run immediately**
+
+```bash
+python src/hour8_automation/pipeline_job.py
+```
+
+**Test the scheduler with two runs, 10 seconds apart**
+
+```bash
+python src/hour8_automation/schedule_job.py --every-seconds 10 --max-runs 2
+```
+
+**Run daily at 2:00 AM**
+
+```bash
+python src/hour8_automation/schedule_job.py
+```
+
+**Run daily at a custom time, such as 6:30 PM**
+
+```bash
+python src/hour8_automation/schedule_job.py --cron "30 18 * * *"
+```
+
+The scheduler uses `SCHEDULE_TZ` from `.env` and defaults to `Asia/Kolkata`. Keep the process running for scheduled jobs to fire. Press **Ctrl+C** to stop it.
+
+**Run the retry demo**
+
+```bash
+python src/hour8_automation/retry.py
+```
+
+**Watch the pipeline log from a second terminal**
+
+On macOS:
+
+```bash
+tail -n 30 -f logs/pipeline.log
+```
+
+In Windows PowerShell:
+
+```powershell
+Get-Content .\logs\pipeline.log -Tail 30 -Wait
+```
+
+Look for `finished: SUCCESS` for the newest run ID. If it says `FAILED`, read the error above it. To check the latest run in MySQL Workbench, run:
+
+```sql
+SELECT run_id, started_at, status, error
+FROM reconciliation.pipeline_runs
+ORDER BY run_id DESC
+LIMIT 1;
+```

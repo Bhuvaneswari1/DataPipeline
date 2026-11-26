@@ -1,0 +1,9 @@
+Open MySQLWorkBench or any MySQL or postGreSQL
+
+CREATE DATABASE IF NOT EXISTS reconciliation;
+
+CREATE USER 'pipeline_user1'@'127.0.0.1' IDENTIFIED BY 'pipeline1';
+
+GRANT SELECT, INSERT, DELETE, CREATE
+ON reconciliation.*
+TO 'pipeline_user1'@'127.0.0.1';
