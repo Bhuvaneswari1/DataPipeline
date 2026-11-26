@@ -1,0 +1,3 @@
+order_id,customer,product,order_date,quantity
+O1004,Unknown,Tablet,2026-10-04,3
+O1010,Vikram,Laptop,2026-10-10,1

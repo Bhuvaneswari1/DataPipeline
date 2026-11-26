@@ -1,0 +1,8 @@
+order_id,customer,product,order_date,quantity,reject_reason
+O1002,Meena,Phone,,2.0,Order date is invalid
+O1007,Divya,Laptop,2026-10-07,-1.0,Quantity must be positive
+O1010,Unknown,Laptop,2026-10-10,0.0,Quantity must be positive
+O2002,Bob,Smartphone,2026-11-11,-1.0,Quantity must be positive
+O2003,Charlie,Tablet,,3.0,Order date is invalid
+O2004,David,Headphones,2026-11-12,,Quantity is not a number
+O2005,Eve,Monitor,,1.0,Order date is invalid

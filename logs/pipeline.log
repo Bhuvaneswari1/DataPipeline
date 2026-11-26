@@ -1,0 +1,27 @@
+2026-11-12 18:01:34,783 WARNING __main__: flaky_load failed (attempt 1 of 3): Simulated temporary connection failure. Retrying in 0.5s
+2026-11-12 18:01:35,285 WARNING __main__: flaky_load failed (attempt 2 of 3): Simulated temporary connection failure. Retrying in 1.0s
+2026-11-12 18:11:20,012 INFO    pipeline: Run 20261112-181120-012155 started
+2026-11-12 18:11:20,199 INFO    pipeline: Cleaned 10 orders and 9 shipments
+2026-11-12 18:11:20,231 INFO    pipeline: Loaded 10 order rows and 9 shipment rows
+2026-11-12 18:11:20,246 INFO    pipeline: Reconciled: unshipped=2 orphan=1 overdue=4
+2026-11-12 18:11:20,318 INFO    pipeline: Run 20261112-181120-012155 finished: SUCCESS in 0.30s
+2026-11-12 18:16:50,066 INFO    apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-11-12 18:16:50,066 INFO    scheduler: Starting scheduler with trigger interval[0:00:05] in Asia/Kolkata
+2026-11-12 18:16:50,066 INFO    apscheduler.scheduler: Added job "run_pipeline" to job store "default"
+2026-11-12 18:16:50,066 INFO    apscheduler.scheduler: Scheduler started
+2026-11-12 18:16:55,071 INFO    apscheduler.executors.default: Running job "run_pipeline (trigger: interval[0:00:05], next run at: 2026-11-12 18:17:00 IST)" (scheduled at 2026-11-12 18:16:55.065989+05:30)
+2026-11-12 18:16:55,072 INFO    pipeline: Run 20261112-181655-072200 started
+2026-11-12 18:16:55,232 INFO    pipeline: Cleaned 10 orders and 9 shipments
+2026-11-12 18:16:55,273 INFO    pipeline: Loaded 1 order rows and 9 shipment rows
+2026-11-12 18:16:55,285 INFO    pipeline: Reconciled: unshipped=2 orphan=1 overdue=4
+2026-11-12 18:16:55,338 INFO    pipeline: Run 20261112-181655-072200 finished: SUCCESS in 0.26s
+2026-11-12 18:16:55,338 INFO    apscheduler.executors.default: Job "run_pipeline (trigger: interval[0:00:05], next run at: 2026-11-12 18:17:00 IST)" executed successfully
+2026-11-12 18:16:55,338 INFO    scheduler: Run 1 succeeded
+2026-11-12 18:17:00,067 INFO    apscheduler.executors.default: Running job "run_pipeline (trigger: interval[0:00:05], next run at: 2026-11-12 18:17:05 IST)" (scheduled at 2026-11-12 18:17:00.065989+05:30)
+2026-11-12 18:17:00,068 INFO    pipeline: Run 20261112-181700-068240 started
+2026-11-12 18:17:00,099 INFO    pipeline: Cleaned 10 orders and 9 shipments
+2026-11-12 18:17:00,112 INFO    pipeline: Loaded 1 order rows and 9 shipment rows
+2026-11-12 18:17:00,119 INFO    pipeline: Reconciled: unshipped=2 orphan=1 overdue=4
+2026-11-12 18:17:00,138 INFO    pipeline: Run 20261112-181700-068240 finished: SUCCESS in 0.07s
+2026-11-12 18:17:00,138 INFO    apscheduler.executors.default: Job "run_pipeline (trigger: interval[0:00:05], next run at: 2026-11-12 18:17:05 IST)" executed successfully
+2026-11-12 18:17:00,138 INFO    scheduler: Run 2 succeeded
